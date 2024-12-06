@@ -70,6 +70,7 @@ public class MyString {
         String result = "\"";
         for (int i = 0; i < str.length(); i++) {
             result += str.charAt(i);
+
             if (i < str.length() - 1) {
                 result += " ";
             }
@@ -90,7 +91,12 @@ public class MyString {
      */
     public static String randomStringOfLetters(int n) {
         //// Replace the following statement with your code
+        if (n <= 0) {
+           return "\"\""; 
+        }
+
         String randomWord = "\"";
+        
         for (int i = 0; i < n; i++) {
             char randomChar = (char) (Math.random() * (26) + 'a');
             randomWord += randomChar;
@@ -111,10 +117,15 @@ public class MyString {
     public static String remove(String str1, String str2) {
        //// Replace the following statement with your code
        String newString = "";
+
+       if (str2.isEmpty()) {
+        return str1; 
+       }
+
        for (int i = 0; i < str1.length(); i++) {
         char currentChar = str1.charAt(i);
 
-       if (str2.charAt(currentChar) == -1) {
+       if (str2.indexOf(currentChar) == -1) {
         newString += currentChar;
         }
        }
