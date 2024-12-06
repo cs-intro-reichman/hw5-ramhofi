@@ -67,7 +67,7 @@ public class MyString {
      */
     public static String spacedString(String str) {
         //// Replace the following statement with your code
-        String result = "\"";
+        String result = "";
         for (int i = 0; i < str.length(); i++) {
             result += str.charAt(i);
 
@@ -75,7 +75,6 @@ public class MyString {
                 result += " ";
             }
         }
-        result += "\"";
         return result;
     }
   
@@ -95,13 +94,13 @@ public class MyString {
            return "\"\""; 
         }
 
-        String randomWord = "\"";
-        
+        String randomWord = "";
+
         for (int i = 0; i < n; i++) {
             char randomChar = (char) (Math.random() * (26) + 'a');
             randomWord += randomChar;
         }
-        randomWord += "\"";
+
         return randomWord;
     }
 
@@ -120,6 +119,10 @@ public class MyString {
 
        if (str2.isEmpty()) {
         return str1; 
+       }
+
+       if (str1.isEmpty()) {
+            return "";
        }
 
        for (int i = 0; i < str1.length(); i++) {
