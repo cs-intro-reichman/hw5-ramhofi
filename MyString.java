@@ -92,9 +92,10 @@ public class MyString {
         //// Replace the following statement with your code
         String randomWord = "\"";
         for (int i = 0; i < n; i++) {
-            char randomChar = (char) (Math.random() * (122 - 97 + 1) + 97);
+            char randomChar = (char) (Math.random() * (26) + 'a');
             randomWord += randomChar;
         }
+        randomWord += "\"";
         return randomWord;
     }
 
@@ -112,8 +113,9 @@ public class MyString {
        String newString = "";
        for (int i = 0; i < str1.length(); i++) {
         char currentChar = str1.charAt(i);
+
        if (str2.charAt(currentChar) == -1) {
-        newString += str1.charAt(i);
+        newString += currentChar;
         }
        }
         return newString;
@@ -129,6 +131,7 @@ public class MyString {
      */
     public static String insertRandomly(char ch, String str) {
          // Generate a random index between 0 and str.length()
+
          int randomIndex = (int) (Math.random() * (str.length() + 1));
          // Insert the character at the random index
          String result = str.substring(0, randomIndex) + ch + str.substring(randomIndex);
