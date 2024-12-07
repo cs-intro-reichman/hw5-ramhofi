@@ -115,7 +115,6 @@ public class MyString {
      */
     public static String remove(String str1, String str2) {
        //// Replace the following statement with your code
-       String newString = "";
 
        if (str2.isEmpty()) {
         return str1; 
@@ -125,13 +124,19 @@ public class MyString {
             return "";
        }
 
-       for (int i = 0; i < str1.length(); i++) {
-        char currentChar = str1.charAt(i);
-
-       if (str2.indexOf(currentChar) == -1) {
-        newString += currentChar;
-        }
+       for (int i = 0; i < str2.length(); i++) {
+        str1 = removechar(str1, str2.charAt(i));
        }
+        return str1;
+    }
+
+    public static String removechar(String str1, char c) {
+        String newString = "";
+        for (int i = 0; i < str1.length(); i++) {
+            if (str1.charAt(i) != c) {
+              newString += str1.charAt(i);  
+            }
+        }
         return newString;
     }
 
