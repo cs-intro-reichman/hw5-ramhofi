@@ -8,6 +8,7 @@ public class MyString {
         System.out.println(countChar(hello, 'l'));
         System.out.println(countChar(hello, 'z'));
         System.out.println(spacedString(hello));
+        System.out.println(remove("committe", "meet"));
         //// Put your other tests here.
     }
 
@@ -125,17 +126,23 @@ public class MyString {
        }
 
        for (int i = 0; i < str2.length(); i++) {
-        str1 = removechar(str1, str2.charAt(i));
+       int index = str1.indexOf(str2.charAt(i));
+       if (index != -1) {
+        str1 = removeIndex(str1, index);
        }
+       }
+
         return str1;
     }
 
-    public static String removechar(String str1, char c) {
+    public static String removeIndex(String str1, int index) {
         String newString = "";
-        for (int i = 0; i < str1.length(); i++) {
-            if (str1.charAt(i) != c) {
-              newString += str1.charAt(i);  
+        for (int i = 0; i < index; i++) {
+                newString += str1.charAt(i);
             }
+
+        for (int j = index +1; j < str1.length(); j++) {
+          newString += str1.charAt(j);  
         }
         return newString;
     }
