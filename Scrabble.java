@@ -72,10 +72,8 @@ public class Scrabble {
 		word = word.toLowerCase();
 
 		for (int i = 0; i < word.length(); i++) {
-			char currentChar = word.charAt(i);
-			if (currentChar >= 'a' && currentChar <= 'z') {
-				score += SCRABBLE_LETTER_VALUES[(int)word.charAt(i) - 97];
-			}
+			score += SCRABBLE_LETTER_VALUES[(int)word.charAt(i) - 97];
+		}	
 			score *= word.length();
 				if (word.length() == HAND_SIZE) {
 				score += 50;
@@ -83,7 +81,6 @@ public class Scrabble {
 					if (MyString.subsetOf("runi",word)) {
 					score +=1000;	
 					}
-		}
 			
 		return score;
 	}
