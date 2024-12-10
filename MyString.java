@@ -50,7 +50,7 @@ public class MyString {
             int countInStr1 = countChar(str1, ch);
             int countInStr2 = countChar(str2, ch);
 
-            if (countInStr1 > countInStr2) {
+            if (countInStr1 != countInStr2) {
                 return false;
             }
 
