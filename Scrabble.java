@@ -103,7 +103,7 @@ public class Scrabble {
 		hand[randomE] = 'e';
 
 		for (int i = 0; i < HAND_SIZE; i++) {
-			if (i != randomA || i != randomE) {
+			if (i != randomA && i != randomE) {
 				int randomIndex = (int) (Math.random() * alphabet.length());
 				hand[i] = alphabet.charAt(randomIndex);
 			}
@@ -181,9 +181,9 @@ public class Scrabble {
 		//// Uncomment the test you want to run
 		///testBuildingTheDictionary();  
 		//testScrabbleScore();    
-		//testCreateHands();  
+		testCreateHands();  
 		///testPlayHands();
-		playGame();
+		//playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
