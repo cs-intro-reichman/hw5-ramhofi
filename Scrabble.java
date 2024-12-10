@@ -53,10 +53,8 @@ public class Scrabble {
 			return false;
 		}
 
-		word = word.toLowerCase();
-
 		for (int i = 0; i < NUM_OF_WORDS; i++) {
-			if (DICTIONARY[i].trim().equals(word)) {
+			if (DICTIONARY[i].toLowerCase().equals(word)) {
 				return true;	
 			}
 		}
